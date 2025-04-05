@@ -1,22 +1,25 @@
 package org.skypro.skyshop;
 
 import org.skypro.skyshop.basket.ProductBasket;
-import org.skypro.skyshop.product.Product;
+import org.skypro.skyshop.product.DiscountedProduct;
+import org.skypro.skyshop.product.FixPriceProduct;
+import org.skypro.skyshop.product.SimpleProduct;
 
 import java.util.Random;
 
 public class App {
 
-    private static final Product[] PROD = new Product[5];
+    private static final SimpleProduct[] PROD = new SimpleProduct[5];
 
     private static final Random RANDOM = new Random();
-    private static final String[] allProd = {"Помидоры", "Огурцы", "Картофель", "Перец Красный", "Баклажан", "Капуста",
+    private static final String[] allFixProd = {"Помидоры", "Огурцы", "Картофель", "Перец Красный", "Баклажан",
+            "Капуста",
             "Кабачок"};
 
     private static void initProd() {
         for (int i = 0; i < PROD.length; i++) {
 //            String fullProd = allProd[RANDOM.nextInt(0, allProd.length)];
-            PROD[i] = new Product(allProd[RANDOM.nextInt(0, allProd.length)], RANDOM.nextInt(50, 1200));
+            PROD[i] = new SimpleProduct(allFixProd[RANDOM.nextInt(0, allFixProd.length)], RANDOM.nextInt(50, 1200));
         }
     }
 
@@ -51,13 +54,13 @@ public class App {
         basket.printBasket();
         System.out.println();
 
-        Product banana = new Product("Банан", 320);
-        Product apple = new Product("Яблоко", 410);
-        Product bread = new Product("Хлеб", 54);
-        Product meat = new Product("Мясо", 650);
-        Product sugar = new Product("Сахор", 89);
-        Product milk = new Product("Молоко", 132);
-        Product fish = new Product("Рыба", 740);
+        SimpleProduct banana = new SimpleProduct("Банан", 320);
+        SimpleProduct apple = new SimpleProduct("Яблоко", 410);
+        DiscountedProduct bread = new DiscountedProduct("Хлеб", 54, 5);
+        DiscountedProduct meat = new DiscountedProduct("Мясо", 650, 12);
+        FixPriceProduct sugar = new FixPriceProduct("Сахор");
+        SimpleProduct milk = new SimpleProduct("Молоко", 132);
+        SimpleProduct fish = new SimpleProduct("Рыба", 740);
 
 //    Добавляем продукты в корзину
         basket.addProduct(banana);
