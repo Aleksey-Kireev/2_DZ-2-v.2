@@ -21,7 +21,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return String.format("< %s  :  %d руб.", getProductName(), getPrice());
+        return String.format("< %s   :   %d руб.", getProductName(), getPrice());
     }
 
     @Override

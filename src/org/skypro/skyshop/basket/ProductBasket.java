@@ -9,7 +9,7 @@ public class ProductBasket {
 
     public void addProduct(Product product) {
         if (size >= products.length) {
-            System.out.println("Невозможно добавить продукт.");
+            System.out.println("Невозможно  добавить продукт.");
             return;
         }
         products[size++] = product;
