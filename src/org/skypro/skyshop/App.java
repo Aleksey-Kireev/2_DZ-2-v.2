@@ -24,7 +24,7 @@ public class App {
         System.out.println("---- ==== org.skypro.skyshop.App.main ==== ----\n");
 
         ProductBasket[] bask = new ProductBasket[5];    // Создаем массив корзин
-        for (int i = 1; i < 4; i++) {                   // и заполняем его рандомно.
+        for (int i = 1; i < 4; i++) {                   //  и заполняем его рандомно.
             initProd();
             bask[i] = new ProductBasket();
             for (int j = 0; j < 5; j++) {
